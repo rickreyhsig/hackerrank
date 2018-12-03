@@ -32,6 +32,6 @@ function regexVar() {
     /*
      * Do not remove the return statement
      */
-    var re = /a.+a|e.+e|i.+i|o.+o|u.+u/;
+    var re = /^a.+a$|^e.+e$|^i.+i$|^o.+o$|^u.+u$/;
     return re;
 }
