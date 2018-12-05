@@ -25,15 +25,13 @@ function readLine() {
 function regexVar() {
     /*
      * Declare a RegExp object variable named 're'
-     * It must match a string that starts and ends with the same vowel (i.e., {a, e, i, o, u})
+     * It must match ALL occurrences of numbers in a string.
      */
 
 
     /*
      * Do not remove the return statement
      */
-     
-     // re.exec(str) -  returns matches
-    var re = /^a.+a$|^e.+e$|^i.+i$|^o.+o$|^u.+u$/;
+    var re = /(\d)+/g;
     return re;
 }

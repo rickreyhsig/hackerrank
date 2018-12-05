@@ -9,6 +9,8 @@ function regexVar() {
     /*
      * Do not remove the return statement
      */
+
+     // re.exec(str) -  returns matches
     var re = /^(Mr\.|Mrs\.|Ms\.|Dr\.|Er\.)[a-zA-Z]+$/;
     return re;
 }
