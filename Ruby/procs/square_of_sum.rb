@@ -1,3 +1,6 @@
+# Proc objects are blocks of code that can be bound to a set of local variables.
+# You can think of a proc object as a "saved" block.
+
 def square_of_sum (my_array, proc_square, proc_sum)
     sum = proc_sum.call(my_array)
     proc_square.call(sum)
