@@ -13,3 +13,9 @@ from(
   order by Name
 ) Temp
 group by RowName
+
+/*
+https://www.hackerrank.com/challenges/occupations/forum
+
+See Cerebex explanation
+*/
