@@ -10,8 +10,8 @@ def sockMerchant(n, ar)
     hash = Hash.new(0)
     pairs = 0
     ar.inject(hash) {|hash, item| hash[item] += 1; hash}
-    hash.max_by{ |k,v| pairs += v/2 }
-    return pairs
+    hash.each{ |k,v| pairs += v/2 }
+    pairs
 end
 
 fptr = File.open(ENV['OUTPUT_PATH'], 'w')
