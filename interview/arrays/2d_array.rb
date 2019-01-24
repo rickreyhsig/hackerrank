@@ -6,117 +6,18 @@ require 'stringio'
 def get_hourglasses(array)
   all_hourglasses = Array.new
 
-  # 0
-  hourglasses = Array.new
-  hourglasses << array[0][0] << array[0][1] << array[0][2]
-  hourglasses <<                array[1][1]
-  hourglasses << array[2][0] << array[2][1] << array[2][2]
-  all_hourglasses << hourglasses
+  indexes = [0,1,2,3]
+  indexes.each do |k|
+    indexes.each { |l| all_hourglasses << get_hourglass(k,l, array) }
+  end
+  return all_hourglasses
+end
 
-  # 1
-  hourglasses = Array.new
-  hourglasses << array[0][1] << array[0][2] << array[0][3]
-  hourglasses <<                array[1][2]
-  hourglasses << array[2][1] << array[2][2] << array[2][3]
-  all_hourglasses << hourglasses
-
-  # 2
-  hourglasses = Array.new
-  hourglasses << array[0][2] << array[0][3] << array[0][4]
-  hourglasses <<                array[1][3]
-  hourglasses << array[2][2] << array[2][3] << array[2][4]
-  all_hourglasses << hourglasses
-
-  # 3
-  hourglasses = Array.new
-  hourglasses << array[0][3] << array[0][4] << array[0][5]
-  hourglasses <<                array[1][4]
-  hourglasses << array[2][3] << array[2][4] << array[2][5]
-  all_hourglasses << hourglasses
-
-  # 4
-  hourglasses = Array.new
-  hourglasses << array[1][0] << array[1][1] << array[1][2]
-  hourglasses <<                array[2][1]
-  hourglasses << array[3][0] << array[3][1] << array[3][2]
-  all_hourglasses << hourglasses
-
-  # 5
-  hourglasses = Array.new
-  hourglasses << array[1][1] << array[1][2] << array[1][3]
-  hourglasses <<                array[2][2]
-  hourglasses << array[3][1] << array[3][2] << array[3][3]
-  all_hourglasses << hourglasses
-
-  # 6
-  hourglasses = Array.new
-  hourglasses << array[1][2] << array[1][3] << array[1][4]
-  hourglasses <<                array[2][3]
-  hourglasses << array[3][2] << array[3][3] << array[3][4]
-  all_hourglasses << hourglasses
-
-  # 7
-  hourglasses = Array.new
-  hourglasses << array[1][3] << array[1][4] << array[1][5]
-  hourglasses <<                array[2][4]
-  hourglasses << array[3][3] << array[3][4] << array[3][5]
-  all_hourglasses << hourglasses
-
-  # 8
-  hourglasses = Array.new
-  hourglasses << array[2][0] << array[2][1] << array[2][2]
-  hourglasses <<                array[3][1]
-  hourglasses << array[4][0] << array[4][1] << array[4][2]
-  all_hourglasses << hourglasses
-
-  # 9
-  hourglasses = Array.new
-  hourglasses << array[2][1] << array[2][2] << array[2][3]
-  hourglasses <<                array[3][2]
-  hourglasses << array[4][1] << array[4][2] << array[4][3]
-  all_hourglasses << hourglasses
-
-  # 10
-  hourglasses = Array.new
-  hourglasses << array[2][2] << array[2][3] << array[2][4]
-  hourglasses <<                array[3][3]
-  hourglasses << array[4][2] << array[4][3] << array[4][4]
-  all_hourglasses << hourglasses
-
-  # 11
-  hourglasses = Array.new
-  hourglasses << array[2][3] << array[2][4] << array[2][5]
-  hourglasses <<                array[3][4]
-  hourglasses << array[4][3] << array[4][4] << array[4][5]
-  all_hourglasses << hourglasses
-
-  # 12
-  hourglasses = Array.new
-  hourglasses << array[3][0] << array[3][1] << array[3][2]
-  hourglasses <<                array[4][1]
-  hourglasses << array[5][0] << array[5][1] << array[5][2]
-  all_hourglasses << hourglasses
-
-  # 13
-  hourglasses = Array.new
-  hourglasses << array[3][1] << array[3][2] << array[3][3]
-  hourglasses <<                array[4][2]
-  hourglasses << array[5][1] << array[5][2] << array[5][3]
-  all_hourglasses << hourglasses
-
-  # 14
-  hourglasses = Array.new
-  hourglasses << array[3][2] << array[3][3] << array[3][4]
-  hourglasses <<                array[4][3]
-  hourglasses << array[5][2] << array[5][3] << array[5][4]
-  all_hourglasses << hourglasses
-
-  # 15
-  hourglasses = Array.new
-  hourglasses << array[3][3] << array[3][4] << array[3][5]
-  hourglasses <<                array[4][4]
-  hourglasses << array[5][3] << array[5][4] << array[5][5]
-  return all_hourglasses << hourglasses
+def get_hourglass(i, j, array)
+  arr = Array.new
+  arr << array[i][j] << array[i][j+1] << array[i][j+2]
+  arr << array[i+1][j+1]
+  arr << array[i+2][j] << array[i+2][j+1] << array[i+2][j+2]
 end
 
 # Complete the hourglassSum function below.
