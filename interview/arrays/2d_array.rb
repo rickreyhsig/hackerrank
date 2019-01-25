@@ -27,7 +27,6 @@ def hourglassSum(arr)
   a = get_hourglasses(arr)
   a.each do |x|
     curMax = x.inject(0){|sum,x| sum + x }
-    curMax
     max = curMax if curMax > max
   end
   return max
