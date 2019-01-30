@@ -5,6 +5,7 @@ require 'stringio'
 
 # Complete the makeAnagram function below.
 def makeAnagram(a, b)
+    # Remove characters present in both strings
     a.each_char do |chr|
         if b.include?(chr)
             a.sub!(chr,''); b.sub!(chr,'')
@@ -15,6 +16,7 @@ def makeAnagram(a, b)
             a.sub!(chr,''); bsub!(chr,'')
         end
     end
+    # Return the length of both strings combined
     return (a+b).length
 end
 
