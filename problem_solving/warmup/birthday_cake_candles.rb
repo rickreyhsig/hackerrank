@@ -7,3 +7,4 @@ end
 
 p birthdayCakeCandles([4,4,1,3])
 p birthdayCakeCandles([2,3,1,3])
+p birthdayCakeCandles([7,7,1,2,7,4,5])
